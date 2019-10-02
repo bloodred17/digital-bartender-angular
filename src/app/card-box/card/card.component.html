@@ -1,0 +1,15 @@
+<div class="card my-4">
+    <img class="card-img-top" src="{{ cocktail.strDrinkThumb }}" alt=" {{ cocktail.strDrink }} ">
+    <div class="card-body">
+        <h5 class="card-title"> {{ cocktail.strDrink }} </h5>
+        <p class="card-text"> {{ cocktail.strCategory }} </p>
+    </div>
+    <div class="card-body">
+        <a 
+            [routerLink]="['/cocktail', cocktail.idDrink]" 
+            routerLinkActive="router-link-active"  
+            class="card-link">
+            <span>View more...</span>
+        </a>
+    </div>
+</div>

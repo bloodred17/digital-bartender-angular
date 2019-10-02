@@ -1,0 +1,23 @@
+<div class="container mt-5">
+
+    <div class="jumbotron d-flex flex-column justify-content-around" *ngIf="selectedCocktail as cocktail">
+        <img src="{{cocktail.strDrinkThumb}}" alt="{{cocktail.strDrink}}">
+        <h4 class="mb-4 display-4 align-self-center"> {{ cocktail.strDrink }} </h4>
+        <hr class="mb-4">
+        <p><strong>Category:</strong> {{ cocktail.strCategory }} </p>
+        <br>
+        <p><strong>Glass:</strong> {{ cocktail.strGlass }} </p>
+        <p><strong>Ingredients:</strong></p>
+        <div class="row" *ngFor="let ingredient of ingredients">
+            <p class="col text-right"> {{ ingredient.name }} </p>
+            <p class="col"> {{ ingredient.measure }} </p>
+        </div>
+        <p><strong>Instructions:</strong> {{ cocktail.strInstructions }} </p>
+        <!-- <p><strong>Date:</strong> {{ cocktail.dateModified }} </p> -->
+
+        <a [routerLink]="['']" routerLinkActive="router-link-active" 
+            class="btn btn-theme mt-4"
+            style="color: white;"
+        > Go Back </a>
+    </div>
+</div>

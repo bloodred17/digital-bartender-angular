@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h3 class="mb-4">Your time of the week has come. After the grind here's some cool cocktails for you to relax. Cheers!🥂</h3>
+        <hr class="mb-4">
+        <div id="render" class="container">
+            <!-- add recipes here -->
+        </div>
+        
+        <div class="d-flex flex-column align-items-center" *ngFor="let cocktail of cocktails">
+            <app-card [cocktail]="cocktail"></app-card>
+        </div>
+        
+        <h5 id="ref1" class="lead mt-5 d-inline-block"> Start making now.  <span><i class="fa fa-arrow-right ml-1" aria-hidden="true"></i></span> </h5>
+        <a  
+        class="btn btn-theme ml-3"
+        (click)="onFetchCocktails()"
+        style="color: white;"
+        >Click Here</a>
+
+    </div>
+</div>
