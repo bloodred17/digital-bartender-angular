@@ -1,7 +1,17 @@
 img{
-    height: 250px;
-    width: 250px;
+    height: 350px;
+    width: 350px;
     border-radius: 8px;
     align-self: center;
     margin-bottom: .7rem;
+    margin-top: -2.8rem;
+    border: 3px solid rgb(235, 135, 248);
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+.btn{
+    font-size: 1.3rem;
 }
