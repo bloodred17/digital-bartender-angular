@@ -35,6 +35,7 @@ export class CardDetailsComponent implements OnInit {
       }
     });
     // console.log(this.selectedCocktail);
+    this.arrangeIngredients(this.selectedCocktail);
   }
 
   arrangeIngredients(cocktail) {
@@ -60,6 +61,8 @@ export class CardDetailsComponent implements OnInit {
         measures.push(measure);
       }
     }
+    // console.log(names);
+    // console.log(measures);
     for(let i = 0; i < names.length; i++){
       ingredient = { name: names[i], measure: measures[i] };
       this.ingredients.push(ingredient);
