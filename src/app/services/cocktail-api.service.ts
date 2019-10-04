@@ -10,7 +10,7 @@ export class CocktailApiService {
   ) { }
 
   fetchCocktail(){
-    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    return this.http.get('https://www.thecocktaildb.com/api/json/v2/9973533/random.php')
       .pipe(
         map(response => {
           for(const key in response){
