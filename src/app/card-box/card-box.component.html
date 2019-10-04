@@ -10,12 +10,34 @@
             <app-card [cocktail]="cocktail"></app-card>
         </div>
         
-        <h5 class="lead mt-5 d-inline-block"> Start making now.  <span><i class="fa fa-arrow-right ml-1" aria-hidden="true"></i></span> </h5>
-        <a  
-        class="btn btn-theme ml-3"
-        (click)="onFetchCocktails()"
-        style="color: white;"
-        >Click Here</a>
-
+        
+        <div *ngIf="!error">
+            <h5 class="lead mt-5 d-inline-block"> Start making now.  <span><i class="fa fa-arrow-right ml-1" aria-hidden="true"></i></span> </h5>
+            <a  
+            class="btn btn-theme ml-3"
+            (click)="onFetchCocktails()"
+            style="color: white;"
+            >Click Here</a>
+        </div>
+        
+        <h5 class="lead mt-5 d-inline-block" *ngIf="error">
+            <span class="text-danger">We are unable to provide cocktails now.</span> 
+            <br>
+            <span class="text-muted">We are working on fixing the issue as soon as possible.
+            Sorry for the inconvenience. Thank you for visiting. Please try again after some time.</span>
+            <br>
+            
+            <div class="d-flex" style="margin: 3rem auto auto 20rem; font-family: 'Bungee Inline', cursive;">
+                &lt;
+                &nbsp;
+                ..
+                <span style="color: rgb(235, 90, 235);" ><i class="fa fa-wrench ml-1" aria-hidden="true"></i></span> 
+                <span class="wrench" ><i class="fa fa-wrench ml-1" aria-hidden="true"></i></span> 
+                <span class="" ><i class="fa fa-wrench ml-1" aria-hidden="true"></i></span> 
+                ..
+                &nbsp;
+                /&gt;
+            </div>
+        </h5>
     </div>
 </div>

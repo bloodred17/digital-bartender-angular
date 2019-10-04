@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CocktailsDataService {
   cocktails = [];
+  error: any = null;
+
   cocktailsObs = Observable.create((observer) => {
     this.cocktails.forEach((item, idx) => {
       if(idx === this.cocktails.length - 1){
@@ -31,9 +33,11 @@ export class CocktailsDataService {
   getCocktail(){
     this.cocktailApi.fetchCocktail().subscribe(responseData => {
       this.cocktails.push(responseData[0]);
-      
+      this.error = null;
       // console.log('Service Cocktails: ');
       // console.log(this.cocktails);
+    }, error => {
+      this.error = error.message;
     });
   }
 }

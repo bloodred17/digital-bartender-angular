@@ -8,6 +8,7 @@ import { CocktailsDataService } from '../services/cocktails-data.service';
 })
 export class CardBoxComponent implements OnInit {
   cocktails = [];
+  error: any = null;
   
   constructor(
     private cocktailData: CocktailsDataService
@@ -15,6 +16,7 @@ export class CardBoxComponent implements OnInit {
 
   ngOnInit() {
     this.cocktails = this.cocktailData.getCocktails();
+    this.error = this.cocktailData.error;
   }
 
   onFetchCocktails(){
@@ -22,5 +24,6 @@ export class CardBoxComponent implements OnInit {
 
     this.cocktails = [];
     this.cocktails = this.cocktailData.getCocktails();
+    this.error = this.cocktailData.error;
   }
 }
