@@ -8,6 +8,7 @@ import { CardComponent } from './card-box/card/card.component';
 import { CocktailApiService } from './services/cocktail-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardDetailsComponent } from './card-box/card/card-details/card-details.component';
+import { ScrollEventModule } from 'ngx-scroll-event';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardDetailsComponent } from './card-box/card/card-details/card-details.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollEventModule
   ],
   providers: [CocktailApiService],
   bootstrap: [AppComponent]

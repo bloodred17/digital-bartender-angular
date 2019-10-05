@@ -8,3 +8,36 @@ h5{
 .wrench{
     color: rgb(80, 15, 231);
 } 
+
+.btn-position{
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    z-index: 9999;
+
+    /* box-shadow: 1px 5px 10px black; */
+}
+
+.btn-shadow {
+    box-shadow: 0 5px 6px rgba(0,0,0,0.12), 0 5px 5px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+    
+.btn-shadow:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+/* .btn-anim{ 
+    color: transparent;
+    color: rgb(80, 15, 231);
+} */
+.btn-anim:hover {
+    color: white;
+}
+
+.btn-visible {
+    display: block;
+}
+
+.btn-invisible {
+    display: none;
+}

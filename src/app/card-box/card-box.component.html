@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5" detect-scroll (onScroll)="handleScroll($event)" [bottomOffset]="200" [topOffset]="200">
     <div class="jumbotron">
         <h3 class="mb-4">Your time of the week has come. After the grind here's some cool cocktails for you to relax. Cheers!🥂</h3>
         <hr class="mb-4">
@@ -6,19 +6,26 @@
             <!-- add recipes here -->
         </div>
         
+        <div *ngIf="!error" style="position: relative;">
+            <h5 class="lead mt-5 d-inline-block "> Start making now.  <span><i class="fa fa-arrow-right ml-1" aria-hidden="true"></i></span> </h5>
+            <button 
+            class="btn btn-theme btn-circle ml-3"
+            (click)="onFetchCocktails()"
+            style="color: white;"
+            >Click here</button>
+            <!-- style="color: white;" -->
+            <button 
+            class="btn btn-theme btn-circle ml-3 btn-position btn-shadow btn-anim"
+            (click)="onFetchCocktails()"
+            *ngIf="btn_visible"
+            ><span style="font-size: 2.5rem">&nbsp;<i class="fas fa-plus"></i>&nbsp;</span></button>
+        </div>
+
         <div class="d-flex flex-column align-items-center" *ngFor="let cocktail of cocktails">
             <app-card [cocktail]="cocktail"></app-card>
         </div>
         
         
-        <div *ngIf="!error">
-            <h5 class="lead mt-5 d-inline-block"> Start making now.  <span><i class="fa fa-arrow-right ml-1" aria-hidden="true"></i></span> </h5>
-            <a  
-            class="btn btn-theme ml-3"
-            (click)="onFetchCocktails()"
-            style="color: white;"
-            >Click Here</a>
-        </div>
         
         <h5 class="lead mt-5 d-inline-block" *ngIf="error">
             <span class="text-danger">We are unable to provide cocktails now.</span> 
