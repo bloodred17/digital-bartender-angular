@@ -15,3 +15,13 @@ p{
 .btn{
     font-size: 1.3rem;
 }
+
+@media(max-height: 575px){
+    img{
+        height: 550px;
+        width: 550px;
+
+        margin-bottom: .7rem;
+        margin-top: -5.5rem;
+    }
+}

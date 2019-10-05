@@ -1,4 +1,7 @@
-<div class="card my-4">
+<div class="card my-4"
+    [routerLink]="['/cocktail', cocktail.idDrink]" 
+    routerLinkActive="router-link-active"  
+>
     <img class="card-img-top" src="{{ cocktail.strDrinkThumb }}" alt=" {{ cocktail.strDrink }} ">
     <div class="card-body">
         <h3 class="card-title"> {{ cocktail.strDrink }} </h3>
