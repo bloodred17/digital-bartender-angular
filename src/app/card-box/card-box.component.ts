@@ -31,10 +31,10 @@ export class CardBoxComponent implements OnInit {
 
   public handleScroll(event: ScrollEvent) {
     // console.log('scroll occurred', event.originalEvent);
-    if (event.isReachingBottom) {
-      // console.log(`the user is reaching the bottom`);
-      this.btn_visible = true;
-    }
+    // if (event.isReachingBottom) {
+    //   // console.log(`the user is reaching the bottom`);
+    //   this.btn_visible = true;
+    // }
     if (event.isReachingTop) {
       // console.log(`the user is reaching the top`);
       this.btn_visible = false;
